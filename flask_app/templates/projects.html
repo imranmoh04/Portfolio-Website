@@ -1,0 +1,40 @@
+{% extends 'shared/layout.html' %}
+
+<body>
+    <!-- Main Content Section -->
+    {% block maincontent %}
+        <!-- Introduction to Projects -->
+        <section class="projects-intro">
+            <h2>My Projects</h2>
+            <p>Below is a list of projects I worked on in CSE 477!</p>
+        </section>
+        <hr />
+        <!-- Piano Project Section -->
+        <section class="project-row">
+            <!-- Left: Clickable Piano Image -->
+            <div class="project-left">
+                <a href="{{ url_for('piano') }}">
+                    <img src="/static/main/images/piano.jpeg"
+                         alt="Piano Project"
+                         loading="lazy"
+                         class="project-image">
+                </a>
+            </div>
+
+            <!-- Right: Project Description -->
+            <div class="project-right">
+                <h3>Piano Project</h3>
+                <p>The piano project is an interactive web-based application that simulates a virtual piano. It allows users to play different notes using their keyboard or mouse. The project explores JavaScript event handling and sound synthesis techniques.</p>
+                <a href="{{ url_for('piano') }}" class="project-link">Learn More</a>
+            </div>
+        </section>
+        <hr />
+            <div class="more">
+                <h4>More coming soon!</h4>
+            </div>
+    {% endblock %}
+
+    <!-- External JavaScript file -->
+    <script src="/static/main/js/nav.js"></script>
+</body>
+</html>

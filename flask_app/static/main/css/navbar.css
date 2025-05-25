@@ -1,0 +1,116 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    padding: 0 5vw;
+    background-color: #333;
+    color: white;
+    position: relative;
+}
+
+/* Assignment Name (Left) */
+.assignment-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex: 1;
+}
+
+/* Navigation Links (Right) */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Nav links adjusting */
+.nav-links a {
+    margin-left: 3vh;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Opacity effect on hover */
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Menu Bar - Always visible but hidden on large screens */
+.menu-icon {
+    display: none;
+    width: 5.5vh;
+    height: 5.5vh;
+    cursor: pointer;
+    position: relative;
+    margin-left: auto;
+}
+
+/* LinkedIn Icon */
+.linkedin-icon {
+    width: 5.5vh;
+    height: 5.5vh;
+}
+
+/* Initially hide LinkedIn text link */
+.linkedin-text {
+    display: none;
+}
+
+/* Responsive Scaling */
+@media (max-width: 650px) {
+    /* Show menu icon */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Hide navigation links initially */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        padding: 1.4vh 0;
+    }
+
+    /* When menu is toggled */
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 1.4vh 0; 
+        margin: 1.4vh 0;
+        width: 100%; 
+        text-align: center;
+    }
+
+    /* Convert LinkedIn image into text on small screens */
+    .linkedin-icon {
+        display: none;
+    }
+
+    .linkedin-text {
+        display: inline; 
+        padding: 1.4vh 0;
+        margin: 1.4vh 0;
+        text-align: center;
+        color: rgba(255,255,255);
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,33 @@
+{% extends 'shared/layout.html' %}
+{% block extrajs %}
+<script src="{{ url_for('static', filename='piano/js/piano.js') }}"></script>
+{% endblock %}
+    <!-- Main Content Section -->
+    {% block maincontent %}
+
+            <p class="behold"><em>Behold piano great and old, it's master slumbers in far off cold, If you wish to see anew, call out to it - we see you.</em></p>
+            <hr />
+        <div class="piano">
+            <h2 class="old">The Great Old One</h2>
+            <ul class="piano-list">
+                <li class="piano-key wkey" data-key="A"><span>a</span></li>
+                <li class="piano-key bkey" data-key="W"><span>w</span></li>
+                <li class="piano-key wkey" data-key="S"><span>s</span></li>
+                <li class="piano-key bkey" data-key="E"><span>e</span></li>
+                <li class="piano-key wkey" data-key="D"><span>d</span></li>
+                <li class="piano-key wkey" data-key="F"><span>f</span></li>
+                <li class="piano-key bkey" data-key="T"><span>t</span></li>
+                <li class="piano-key wkey" data-key="G"><span>g</span></li>
+                <li class="piano-key bkey" data-key="Y"><span>y</span></li>
+                <li class="piano-key wkey" data-key="H"><span>h</span></li>
+                <li class="piano-key bkey" data-key="U"><span>u</span></li>
+                <li class="piano-key wkey" data-key="J"><span>j</span></li>
+                <li class="piano-key wkey" data-key="K"><span>k</span></li>
+                <li class="piano-key bkey" data-key="O"><span>o</span></li>
+                <li class="piano-key wkey" data-key="L"><span>l</span></li>
+                <li class="piano-key bkey" data-key="P"><span>p</span></li>
+                <li class="piano-key wkey" data-key=";"><span>;</span></li>
+            </ul>
+        </div>
+        {% endblock %}
+

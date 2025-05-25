@@ -1,0 +1,23 @@
+{% extends "shared/layout.html" %}
+
+{% block maincontent %}
+    <div class="feedback-page-container">
+        <h2>User Feedback</h2>
+
+        {% if feedback %}
+            <div class="feedback-list">
+                {% for entry in feedback %}
+                    <div class="feedback-card">
+                        <h3>{{ entry[0] }}</h3>  <!-- Name -->
+                        <p><strong>Email:</strong> {{ entry[1] }}</p>  <!-- Email -->
+                        <p>{{ entry[2] }}</p>  <!-- Comment -->
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No feedback yet. Be the first to leave one!</p>
+        {% endif %}
+
+        <a href="{{ url_for('home') }}" class="back-btn">Back to Home</a>
+    </div>
+{% endblock %}

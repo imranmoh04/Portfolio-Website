@@ -1,0 +1,127 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohid Imran's personal page</title>
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/header.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/navbar.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/footer.css') }}">
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='main/js/feedback.js') }}"></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<body>
+    <article>
+    <!-- The header  -->
+    <header>
+      <div class="box">
+      </div>
+    </header>
+
+    <!-- The navigation bar -->
+    <nav>
+     <!-- Navigation Section -->
+     <div class="navbar">
+      <div class="assignment-name">
+      {% if user != 'Unknown' %}
+        Welcome, {{ user }}
+      {% else %}
+        CSE 477 - Homework 3 
+      {% endif %}</div>
+
+      <!-- Menu Bar (Always Visible on Small Screens) -->
+      <img src="/static/main/images/menu-bar.png" 
+          alt="Menu bar" 
+          loading="lazy"
+          class="menu-icon">
+
+      <!-- Navigation Links -->
+      <div class="nav-links">
+          <a href="{{ url_for('home') }}" 
+          title="Home Page">
+          Home</a>
+          <a href="{{ url_for('projects') }}"
+          title="Projects Page">
+          Projects</a>
+          <a href="{{ url_for('resume') }}"
+          title="Resume">
+          Resume</a>
+          {% if user != 'Unknown' %}
+            <a href="{{ url_for('logout') }}"
+            title="Logout Page">
+            Logout</a>
+          {% else %}
+            <a href="{{ url_for('login') }}" 
+            title="Login Page">
+            Login</a>
+          {% endif %}
+          <a href="{{url_for('chat') }}"
+          title="Chat Room Page">
+          Chat
+          </a>
+          <div class="linkedin-link">
+          <a href="https://www.linkedin.com/in/mohid-imran"
+          target="_blank">
+          <img src="/static/main/images/social-linkedin.png"
+              alt="LinkedIn"
+              loading="lazy"
+              class="linkedin-icon">
+              <span class="linkedin-text">LinkedIn</span>
+          </a>
+          </div>
+      </div>
+  </div>
+
+    </nav>
+
+    <!-- The main content  -->
+    <main>
+      {% block maincontent %}{% endblock %}
+      <!-- Feedback Button -->
+    <button class="feedback-btn" onclick="toggleFeedbackForm()">Feedback</button>
+
+    <!-- Feedback Form (Initially Hidden) -->
+    <div id="feedback-container" class="feedback-container" style="display: none;">
+      <div class="feedback-form">
+        <button class="feedback-btn" onclick="toggleFeedbackForm()">Feedback</button>
+        <h2 id="feedback-title">Send Feedback</h2>
+        <form action="{{ url_for('processfeedback') }}" method="POST" enctype="multipart/form-data">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="comment">Comment:</label>
+          <textarea id="comment" name="comment" rows="4" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    </main>
+    
+
+    <!-- The footer of the file -->
+    <footer>
+        <p>© 2024 Mohid Imran</p>
+    </footer>
+
+    </article>
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+

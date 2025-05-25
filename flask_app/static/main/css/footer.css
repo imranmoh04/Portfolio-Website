@@ -1,0 +1,29 @@
+/* Footer Styling */
+footer {
+    background-color: #222; 
+    color: white;
+    text-align: center;
+    padding: 3vh;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Footer Text Styling */
+footer p {
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 3vh;
+    }
+
+    footer p {
+        max-width: 90%;
+    }
+}

@@ -1,0 +1,706 @@
+
+
+/* Main container */
+.mohid {
+    display: flex;
+    max-width: 80vw;
+    max-height: 50vh;
+    margin: auto;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    padding: 2.7vh;
+    flex-direction: row;
+    
+}
+
+/* Left column - Image */
+.mohid .left {
+    flex: 1;
+    display: flex;
+    background-image: url('/static/main/images/me.png');
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Right column - Name & Description */
+.mohid .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: justify;
+    padding: 2.7vh;
+    overflow-y: auto;
+}
+
+/* Name */
+.mohid .right h2 {
+    display: inline;
+    flex-direction: column;
+    text-align: justify;
+    font-size: 2rem;
+    margin-bottom: 1.4vh;
+    justify-content: center;
+}
+
+/* Description */
+.mohid .right p {
+    display: inline;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* Fun fact row */
+.fun {
+    max-width: 80vw;
+    margin: 2.7vh auto;
+    text-align: center;
+    padding: 2.7vh;
+    background-color: #ddd;
+}
+
+.fun h3 {
+    font-size: 1.5rem;
+}
+
+.fun p {
+    font-size: 1.2rem;
+}
+
+
+/* Projects Page: Intro Section */
+.projects-intro {
+    text-align: center;
+    padding: 2.7vh;
+    max-width: 80vw;
+    margin: auto;
+}
+
+/* Project Row: Two-Column Layout */
+.project-row {
+    display: flex;
+    align-items: center;
+    max-width: 80vw;
+    margin: 5.5vh auto;
+    background-color: #f4f4f4;
+    padding: 2.7vh;
+    border-radius: 1.4vh;
+    box-shadow: 0vh 0.6vh 0.6vh rgba(0, 0, 0, 0.2);
+}
+
+/* Left Column: Clickable Piano Image */
+.project-left {
+    flex: 1;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 55vh;
+    border-radius: 1.4vh;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect on Image */
+.project-image:hover {
+    transform: scale(1.05);
+}
+
+/* Right Column: Description */
+.project-right {
+    flex: 1;
+    padding: 2.7vh;
+    text-align: justify;
+}
+
+/* Project Title */
+.project-right h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.4vh;
+}
+
+/* Project Description */
+.project-right p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* "Learn More" Link */
+.project-link {
+    display: inline-block;
+    margin-top: 1.4vh;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.more {
+    text-align: center;
+    padding: 2.7vh;
+    font-size: 3.6vh;
+    max-width: 80vw;
+    margin: auto;
+}
+
+.behold {
+    text-align: center;
+    padding: 2.1vh;
+    font-size: 2.7vh;
+}
+.piano {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
+    margin: 5.5vh auto;
+    background-color: rgba(37,41,46,255);
+    padding: 1.4vh;
+    border-radius: 4.1vh 4.1vh 0vh 0vh;
+    position: relative;
+    z-index: 1;
+    width: auto;
+    max-width: 75%;
+    box-sizing: border-box;
+}
+
+
+
+.old {
+    display: block;
+    position: absolute;
+    top: 10%;
+    bottom: 50%;
+    text-align: center;
+    margin-bottom: 1.4vh;
+    padding: 1.4vh;
+    font-size: 6.2vh;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: rgba(255,255,255);
+    z-index: 10;
+}
+
+.piano-list {
+  display: flex;
+  list-style: none;
+  margin-top: 20.6vh;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+.piano-list .bkey {
+  position: relative;
+  z-index: 2;
+  width: 4.1vh;
+  height: 20.6vh;
+  margin: 0 -2.1vh 0 -2.1vh;
+  border-radius: 0 0 0.7vh 1.4vh;
+  background: rgba(0,0,0);
+}
+
+.piano-list .bkey.active {
+  box-shadow: inset -1.4vh -1.4vh 1.4vh rgba(255,255,255,0.1);
+  background:rgba(0,0,0);
+}
+.piano-list .wkey {
+  position: relative;
+  height: 31.5vh;
+  width: 7.6vh;
+  border-radius: 1.1vh;
+  border: 0.6vh solid rgba(0,0,0);
+  background: rgba(255,255,255);
+}
+.piano-list .wkey.active {
+  box-shadow: inset -0.7vh 0.7vh 2.8vh rgba(0,0,0,0.2);
+  background:rgba(255,255,255);
+}
+.piano-list .bkey span {
+  position: absolute;
+  bottom: 0.7vh;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  font-size: 2.7vh;
+  text-align: center;
+  visibility: hidden; 
+  transition: visibility 0.3s ease; 
+}
+
+.piano-list .wkey span {
+  position: absolute;
+  bottom: 0.7vh;
+  width: 100%;
+  color: rgba(0,0,0);
+  font-size: 2.7vh;
+  text-align: center;
+  visibility: hidden; 
+  transition: visibility 0.3s ease; 
+}
+
+/* Show the text when the key is hovered */
+.piano-list:hover .bkey span,
+.piano-list:hover .wkey span {
+    visibility: visible; 
+}
+
+.piano-list .key.hide span {
+  display: none;
+}
+
+.resume {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%; 
+    margin: auto;
+    padding: 3vh 5vw;
+    font-family: 'Arial', sans-serif;
+}
+
+/* ============================
+   Institution Styles
+   ============================ */
+.institution {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.institution__name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.institution__location {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    text-align: right;
+}
+
+/* ============================
+   Position Styles
+   ============================ */
+.positions {
+    margin-top: 1rem;
+}
+
+.position {
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.position__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0);
+    margin-bottom: 1rem;
+}
+
+.position__dates {
+    font-size: 1.2rem;
+    text-align: right;
+    color: #7f8c8d;
+}
+
+.position__responsibilities {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+/* ============================
+   Experience Styles
+   ============================ */
+.experiences {
+    margin-top: 2rem;
+}
+
+.experiences__heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0);
+}
+
+.experience__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experience__item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+.experience__name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0);
+}
+
+.experience__link {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.experience__link:hover {
+    text-decoration: underline;
+}
+
+.experience__description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0);
+}
+
+/* ============================
+   Skills Styles
+   ============================ */
+.skills {
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.skills__heading {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0);
+}
+
+.skills__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skill__item {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 0.8rem;
+}
+
+/* ============================
+   Separator
+   ============================ */
+.resume__separator {
+    border: 0.137vh solid #ddd;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.feedback-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    z-index: 9999; 
+    
+    }
+
+.feedback-form {
+    background-color: rgba(0, 0, 0); 
+    max-width: 54.8vh; 
+    width: 100%; 
+    padding: 2.74vh;
+    color: #fff; 
+    text-align: center;
+    position: relative;
+    z-index: 10000; 
+    }
+    /* Form fields styling */
+.feedback-form input, .feedback-form textarea {
+    width: 100%;
+    padding: 1.37vh;
+    margin: 1.37vh 0;
+    border: 0.137vh solid #ccc;
+    border-radius:  0.67vh; 
+    background-color: #fff; 
+    color: rgba(0, 0, 0); 
+    font-size: 1.91vh;
+}
+
+.feedback-title h2 {
+    color: #333;
+}
+
+.feedback-page-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+}
+.feedback-btn {
+    color:rgb(128, 128, 128);
+    position: fixed;
+    right: -1%;
+    top: 50%;
+    margin: 0;
+    font-size: 1.37vh;
+    padding: 1.37vh 0.74vh;
+    transform:translateY(-50%) rotate(-90deg);
+    background-color: #333;
+    color: rgb(255, 255, 255);
+}
+
+.feedback-list {
+    margin-top: .74vh;
+}
+
+.feedback-card {
+    background: #ffffff;
+    border-left:  0.67vh solid #007bff;
+    padding: 2.05vh;
+    margin-bottom: 2.05vh;
+    border-radius: 0.67vh;
+    box-shadow: 0vh 0.27vh 0.54vh rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.feedback-card h3 {
+    margin: 0;
+    color: #007bff;
+}
+
+.feedback-card p {
+    margin: 0.68vh 0;
+}
+
+.back-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #007bff;
+    color: rgb(255, 255, 255);
+    padding: 1.37vh 2.05vh;
+    border-radius: 0.67vh;
+    margin-top: 2.74vh;
+}
+
+.back-btn:hover {
+    background: #0056b3;
+}
+
+.login-title {
+    justify-content: center; 
+    align-items: center;
+    margin: 3%;
+    font-size: 7vh;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.email-login {
+    padding: 1.4vh;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    margin: 3%;
+}
+
+.password-login {
+    padding: 1.4vh;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    margin: 3%;
+
+}
+
+.submit-login {
+    padding: 1.4vh;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    margin: 3%;
+}
+.login-form {
+    padding: 7vh;
+    justify-content: center; 
+    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20%;
+}
+
+#chat {
+    width: 100%;
+    height: 47.945vh;
+    padding: 1.644vh 2.740vh;
+    box-sizing: border-box;
+    border: 0.274vh solid #ccc;
+    border-radius: 0.5479vh;
+    background-color: #f8f8f8;
+    font-size: 2.192vh;
+    resize: none;
+    overflow-y:auto
+  }
+  
+.chat-head {
+    justify-content: center; 
+    align-items: center;
+    margin: 3%;
+    font-size: 7vh;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+
+.chat-input {
+    justify-content: center; 
+    align-items: center;
+    padding: 2.5vh;
+    width: 50%;
+    max-width: 50%;
+}
+
+.chat-input-container {
+    justify-content: center; 
+    align-items: center;
+    padding: 1.4vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-leave {
+    padding: 1.4vh;
+    justify-content: center; 
+    align-items: center;
+    margin: 3%;
+    width: 50%;
+    max-width: 50%;
+    background-color: #2980b9;
+    color: #ffffff;
+    font-size: large;
+}
+
+/* Responsive Design */
+@media (max-width: 650px) {
+    .resume {
+        max-width: 90%;
+        padding: 2.7rem;
+    }
+
+    .institution {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .position__dates {
+        text-align: center;
+    }
+    .piano {
+        max-width: 100%;
+    }
+    .piano-list .bkey {
+        width: 4vw;
+        height: 10vh;
+        margin: 0 -3vw;
+    }
+    .piano-list .wkey {
+        width: 6vw;
+        height: 15vh;
+    }
+    .old {
+        font-size: 4vw;
+        margin-bottom: 2.7vh;
+    }
+    
+    .mohid {
+        flex-direction: column;
+        align-items: center;
+        max-width: 80vw;
+        max-height: unset;
+    }
+
+    .mohid .left, .mohid .right {
+        width: 100%;
+        max-width: 80vw;
+        flex: none;
+    }
+
+    .project-row {
+        flex-direction: column;
+        max-width: 80vw;
+    }
+
+    .project-left, .project-right {
+        width: 100%;
+        text-align: center;
+        padding: 1.4vh;
+    }
+
+    /* Set text overflow to be visible */
+    .mohid .right, .project-right, .fun {
+        overflow: visible;
+    }
+
+    .fun, .projects-intro, .more, .behold {
+        max-width: 80vw;
+        
+    }
+     
+      .behold {
+        margin: 0 auto;
+        max-width: 80vw;
+    }
+    
+  .piano-list {
+    margin-top: 11vh; 
+  }
+  .piano-list .key:where(:nth-child(9), :nth-child(10)) {
+    display: none;
+  }
+  .piano-list .bkey {
+    height: 20.5vh;
+    width: 4.1vh;
+    margin: 0 -2.7vh 0 -2.7vh;
+  }
+  .piano-list .wkey {
+    height: 31.5vh;
+    width: 7.5vh;
+  }
+  .feedback-page-container {
+    padding: 2vh 5vw; 
+    word-wrap: break-word;
+}
+
+.feedback-btn {
+    font-size: 1.64vh; 
+    padding: 1.37vh 2.05vh; 
+}
+
+.feedback-list {
+    margin-top: 2.74vh;
+    width: 90%;
+    word-wrap: break-word;
+}
+
+.feedback-card {
+    padding: 2.05vh; 
+    word-wrap: break-word;
+}
+
+.feedback-card h3 {
+    font-size: 2.19vh; 
+    word-wrap: break-word;
+}
+
+.back-btn {
+    font-size: 1.91vh; 
+    padding: 1.37vh 2.05vh; 
+}
+}

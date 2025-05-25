@@ -1,0 +1,4 @@
+"inst_id","type","name","department","address","city","state","zip"
+"1","Academia","Michigan State University","Computer Science",428 S Shaw Ln,"East Lansing","Michigan",NULL
+"2","Automation","BigCommerce","Information Technology",11305 4 Points Dr Building 2,"Austin","Texas",NULL
+"3","Developer","Imagine Software","College",NULL,"East Lansing","Michigan",NULL
